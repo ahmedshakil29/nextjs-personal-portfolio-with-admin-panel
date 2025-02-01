@@ -217,14 +217,14 @@ export default function AdminView() {
     }
   }
 
-  if (!authUser)
-    return (
-      <Login
-        formData={loginFormData}
-        handleLogin={handleLogin}
-        setFormData={setLoginFormData}
-      />
-    );
+  //   if (!authUser)
+  //     return (
+  //       <Login
+  //         formData={loginFormData}
+  //         handleLogin={handleLogin}
+  //         setFormData={setLoginFormData}
+  //       />
+  //     );
 
   return (
     <div className="border-b border-gray-200">
