@@ -1,50 +1,34 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Link as LinkScroll, scroller } from "react-scroll";
 
 const menuItems = [
-  {
-    id: "home",
-    label: "Home",
-  },
-  {
-    id: "about",
-    label: "About",
-  },
-  {
-    id: "experience",
-    label: "Experience",
-  },
-  {
-    id: "project",
-    label: "projects",
-  },
-  {
-    id: "contact",
-    label: "Contact",
-  },
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "project", label: "Projects" },
+  { id: "contact", label: "Contact" },
 ];
 
-function CreateMenus({ activeLink, getMenuItems, setActiveLink }) {
-  return getMenuItems.map((item) => (
-    <LinkScroll
-      activeClass="active"
-      to={item.id}
-      spy={true}
-      smooth={true}
-      duration={1000}
-      onSetActive={() => setActiveLink(item.id)}
+function CreateMenus({ activeLink, setActiveLink }) {
+  const handleScroll = (id) => {
+    setActiveLink(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return menuItems.map((item) => (
+    <span
+      key={item.id}
+      onClick={() => handleScroll(item.id)}
       className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative
-    ${
-      activeLink === item.id
-        ? "text-green-main animation-active shadow-green-main"
-        : "text-[#000] font-bold hover:text-green-main"
-    }
-    `}
+      ${
+        activeLink === item.id
+          ? "text-green-main animation-active shadow-green-main"
+          : "text-[#000] font-bold hover:text-green-main"
+      }`}
     >
       {item.label}
-    </LinkScroll>
+    </span>
   ));
 }
 
@@ -53,9 +37,12 @@ export default function Navbar() {
   const [scrollActive, setScrollActive] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollActive(window.screenY > 20);
-    });
+    const handleScroll = () => {
+      setScrollActive(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -78,16 +65,13 @@ export default function Navbar() {
             <CreateMenus
               setActiveLink={setActiveLink}
               activeLink={activeLink}
-              getMenuItems={menuItems}
             />
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-center items-center">
             <button
               onClick={() =>
-                scroller.scrollTo("contact", {
-                  duration: 1500,
-                  delay: 100,
-                  smooth: true,
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
                 })
               }
               className="py-3 px-6 border-[2px] bg-[#fff] border-green-main text-[#000] font-semibold rounded-lg text-xl tracking-widest hover:shadow-green-md transition-all outline-none"
@@ -103,7 +87,6 @@ export default function Navbar() {
             <CreateMenus
               setActiveLink={setActiveLink}
               activeLink={activeLink}
-              getMenuItems={menuItems}
             />
           </ul>
         </div>
