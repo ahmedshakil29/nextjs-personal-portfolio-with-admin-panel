@@ -65,3 +65,36 @@ export async function login(formData) {
     console.log(e);
   }
 }
+
+export async function handleDelete(id) {
+  try {
+    const res = await fetch(`/api/education/delete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+
+    return res.json();
+  } catch (e) {
+    console.error("Error Deleting items", e);
+    return { success: false, message: "Failed to delete item" };
+  }
+}
+
+// export async function handleDelete(id) {
+//   try {
+//     const res = await fetch(`/api/education/delete?id=${id}`, {
+//       method: "DELETE",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//     return res.json();
+//   } catch (e) {
+//     console.error("Error Deleting items", e);
+//     return { success: false, message: "Failed to delete item" };
+//   }
+// }
