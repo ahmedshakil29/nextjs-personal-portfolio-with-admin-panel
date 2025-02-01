@@ -7,7 +7,7 @@ const menuItems = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "project", label: "Projects" },
-  { id: "contact", label: "Contact" },
+  // { id: "contact", label: "Contact" },
 ];
 
 function CreateMenus({ activeLink, setActiveLink }) {
@@ -56,9 +56,9 @@ export default function Navbar() {
           <div className="col-start-1 col-end-2 flex items-center">
             <div className="cursor-pointer flex gap-2 font-bold items-center text-[20px] text-green-main">
               <div className="w-[40px] h-[40px] flex justify-center items-center p-3 rounded-[8px] border-green-main bg-green-main">
-                <span className="text-[#fff] text-[25px] font-bold">P</span>
+                <span className="text-[#fff] text-[25px] font-bold">S</span>
               </div>
-              ortfolio
+              Ahmed
             </div>
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-[#000] items-center">

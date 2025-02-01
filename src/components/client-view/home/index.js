@@ -10,7 +10,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Image from "next/image";
-import aiImage from "../../../assets/ai-image.png";
+import aiImage from "../../../assets/ShakilAhmed.webp";
 
 function variants() {
   return {
