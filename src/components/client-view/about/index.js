@@ -5,6 +5,7 @@ import AnimationWrapper from "../animation-wrapper";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import aboutMeImage from "../../../assets/about-image.png";
+//import aboutMeImage from "../../../assets/aboutMe.png";
 
 function variants() {
   return {
@@ -51,11 +52,14 @@ export default function ClientAboutView({ data }) {
     },
   ];
 
-  const headingText = "Why Hire Me For Your Next Project ?";
+  const headingText = "Why Choose Me For Your Next Project ?";
 
   return (
-    <div className="max-w-screen-xl mt-24 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto" id="about">
-      <div className="w-full flex">
+    <div
+      className="max-w-screen-xl mt-24 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      id="about"
+    >
+      {/* <div className="w-full flex">
         <AnimationWrapper className="rounded-lg w-full grid-flow-row grid grid-cols-1 sm:grid-cols-3 py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-green-main bg-ehite-500 z-10">
           {aboutDataInfo.map((infoItem, index) => (
             <motion.div
@@ -85,7 +89,7 @@ export default function ClientAboutView({ data }) {
             </motion.div>
           ))}
         </AnimationWrapper>
-      </div>
+      </div> */}
       <AnimationWrapper className={"pt-6"}>
         <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
           <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
@@ -118,8 +122,19 @@ export default function ClientAboutView({ data }) {
             variants={setVariants}
             className="grid gap-4 grid-cols-3 h-full max-h-[200px] w-full"
           >
-            {data?.skills.split(",").map((skill) => (
+            {/* {data?.skills.split(",").map((skill) => (
               <motion.div
+                className="w-full flex justify-center items-center"
+                variants={skillItemVariant}
+              >
+                <button className="whitespace-nowrap text-ellipsis overflow-hidden py-3 w-[160px] px-6 border-[2px] border-green-main bg-[#fff] text-[#000] font-semibold rounded-lg text-xl tracking-widest hover:shadow-green-main transition-all outline-none">
+                  {skill}
+                </button>
+              </motion.div>
+            ))} */}
+            {data?.skills.split(",").map((skill, index) => (
+              <motion.div
+                key={index} // Add this key
                 className="w-full flex justify-center items-center"
                 variants={skillItemVariant}
               >
