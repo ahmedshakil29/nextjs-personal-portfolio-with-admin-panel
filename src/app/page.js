@@ -3,6 +3,7 @@ import ClientContactView from "@/components/client-view/contact";
 import ClientExperienceAndEducationView from "@/components/client-view/experience";
 import ClientHomeView from "@/components/client-view/home";
 import ClientProjectView from "@/components/client-view/project";
+import ClientFooterView from "@/components/client-view/footer";
 
 async function extractAllDatas(currentSection) {
   const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
@@ -36,6 +37,7 @@ export default async function Home() {
       />
       <ClientProjectView data={projectSectionData} />
       <ClientContactView />
+      <ClientFooterView />
     </div>
   );
 }
