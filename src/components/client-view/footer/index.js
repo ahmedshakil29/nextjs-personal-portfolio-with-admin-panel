@@ -16,7 +16,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <div className=" flex items-center justify-center">
+    <div className=" flex items-center bg-gray-100 justify-center">
       <footer className="bg-gray-800 text-white py-6 px-8">
         <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center">
           {/* Left Side: Text/Brand */}
