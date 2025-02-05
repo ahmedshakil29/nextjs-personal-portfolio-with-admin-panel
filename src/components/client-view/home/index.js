@@ -84,9 +84,6 @@ export default function ClientHomeView({ data }) {
                     ))
                 : null}
             </h1>
-            {/* <p className="text-[#000] mt-4 mb-8 font-bold">
-              {data && data.length ? data[0]?.summary : null}
-            </p> */}
             <p className="text-[#000] mt-4 mb-8 font-bold text-justify">
               {data && data.length ? data[0]?.summary : null}
             </p>
