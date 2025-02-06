@@ -221,7 +221,7 @@ export default function ClientAboutView({ data }) {
     >
       <div className="flex justify-center gap-4 mt-8"></div>
 
-      <div className="w-full flex">
+      {/* <div className="w-full flex">
         <AnimationWrapper className="rounded-lg w-full grid-flow-row grid grid-cols-1 sm:grid-cols-3 py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-green-main bg-ehite-500 z-10">
           {aboutDataInfo.map((infoItem) => (
             <motion.div
@@ -251,7 +251,7 @@ export default function ClientAboutView({ data }) {
             </motion.div>
           ))}
         </AnimationWrapper>
-      </div>
+      </div> */}
 
       <AnimationWrapper className={"pt-6"}>
         <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
