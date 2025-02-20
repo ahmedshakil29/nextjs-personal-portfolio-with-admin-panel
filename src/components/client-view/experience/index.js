@@ -170,14 +170,42 @@ export default function ClientExperienceAndEducationView({
               </h1>
             </div>
           </AnimationWrapper>
-
           <AnimationWrapper>
             <div className="flex w-full">
               <motion.div className="container">
                 <Timeline position="right">
-                  {experienceData && experienceData.length
+                  {/* {experienceData && experienceData.length
                     ? experienceData.map((experienceItem) => (
                         <TimelineItem>
+                          <TimelineSeparator>
+                            <TimelineDot className="bg-green-main" />
+                            <TimelineConnector className="bg-green-main" />
+                          </TimelineSeparator>
+                          <TimelineContent>
+                            <div className="border-[2px] p-4 rounded-[8px] border-green-main mt-[14px] ml-[16px]">
+                              <p className="font-bold">
+                                {experienceItem.duration}
+                              </p>
+                              <p className="font-extrabold mt-2">
+                                {experienceItem.company},{" "}
+                                {experienceItem.location}
+                              </p>
+                              <p className="font-extrabold mt-2">
+                                {experienceItem.position}
+                              </p>
+                              <p className="font-bold mt-2">
+                                {experienceItem.jobprofile}
+                              </p>
+                            </div>
+                          </TimelineContent>
+                        </TimelineItem>
+                      ))
+                    : null} */}
+                  {experienceData && experienceData.length
+                    ? experienceData.map((experienceItem, index) => (
+                        <TimelineItem key={index}>
+                          {" "}
+                          {/* Add key here */}
                           <TimelineSeparator>
                             <TimelineDot className="bg-green-main" />
                             <TimelineConnector className="bg-green-main" />
@@ -207,9 +235,7 @@ export default function ClientExperienceAndEducationView({
             </div>
           </AnimationWrapper>
         </div>
-
         {/* // Education Part Start */}
-
         <div className="flex flex-col gap-5">
           <AnimationWrapper className={"py-6 sm:py-16"}>
             <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
@@ -227,12 +253,11 @@ export default function ClientExperienceAndEducationView({
               </h1>
             </div>
           </AnimationWrapper>
-
           <AnimationWrapper>
             <div className="flex w-full">
               <motion.div className="container">
                 <Timeline position="right">
-                  {educationData && educationData.length
+                  {/* {educationData && educationData.length
                     ? educationData.map((educationItem) => (
                         <TimelineItem>
                           <TimelineSeparator>
@@ -241,14 +266,39 @@ export default function ClientExperienceAndEducationView({
                           </TimelineSeparator>
                           <TimelineContent>
                             <div className="border-[2px] p-4 rounded-[8px] border-green-main mt-[14px] ml-[16px]">
-                              <p className="font-bold">
-                                Year: {educationItem.year}
-                              </p>
                               <p className="font-extrabold mt-2">
-                                College: {educationItem.college}
+                                {educationItem.degree}
+                              </p>
+                              <p className="font-bold">
+                                {educationItem.college}
                               </p>
                               <p className="font-bold mt-2">
-                                Degree: {educationItem.degree}
+                                Year: {educationItem.year}
+                              </p>
+                            </div>
+                          </TimelineContent>
+                        </TimelineItem>
+                      ))
+                    : null} */}
+                  {educationData && educationData.length
+                    ? educationData.map((educationItem, index) => (
+                        <TimelineItem key={index}>
+                          {" "}
+                          {/* Add key here */}
+                          <TimelineSeparator>
+                            <TimelineDot className="bg-green-main" />
+                            <TimelineConnector className="bg-green-main" />
+                          </TimelineSeparator>
+                          <TimelineContent>
+                            <div className="border-[2px] p-4 rounded-[8px] border-green-main mt-[14px] ml-[16px]">
+                              <p className="font-extrabold mt-2">
+                                {educationItem.degree}
+                              </p>
+                              <p className="font-bold">
+                                {educationItem.college}
+                              </p>
+                              <p className="font-bold mt-2">
+                                Year: {educationItem.year}
                               </p>
                             </div>
                           </TimelineContent>
